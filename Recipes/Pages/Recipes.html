@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<title>Recipes</title>
+<style>
+.filterDiv {
+  float: left;
+  background-color: #696969;
+  color: #ffffff;
+  width: 19%;
+  line-height: 100px;
+  text-align: center;
+  margin: 2px;
+  display: none;
+}
+
+.Beef{
+  background-color: #00008B;
+}
+
+.Chicken{
+  background-color: #DAA520;
+}
+
+.Pork{
+  background-color: #8B0000;
+}
+
+.Vegetarian{
+  background-color: #006400;
+}
+
+.show {
+  display: block;
+}
+
+.container {
+  margin-top: 20px;
+  overflow: hidden;
+}
+
+/* Style the buttons */
+.btn {
+  border: none;
+  outline: none;
+  padding: 12px 16px;
+  background-color: #f1f1f1;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: #ddd;
+}
+
+.btn.active {
+  background-color: #666;
+  color: white;
+}
+</style>
+<body>
+
+<h1>Recipes</h1>
+
+<h4>Recipes ordered alphabetically</h4>
+
+<h4>To filter by meal types, click on the buttons below</h4>
+
+<div id="myBtnContainer">
+  <button class="btn active" onclick="filterSelection('all')">Show all</button>
+  <button class="btn" onclick="filterSelection('Beef')">Beef</button>
+  <button class="btn" onclick="filterSelection('Chicken')">Chicken</button>
+  <button class="btn" onclick="filterSelection('Pork')">Pork</button>
+  <button class="btn" onclick="filterSelection('Vegetarian')">Vegetarian</button>
+  <button class="btn" onclick="filterSelection('Desert')">Desert</button>
+  <button class="btn" onclick="filterSelection('Other')">Other</button>
+</div>
+
+<div class="container">
+  <div onclick="location.href='../HTML/Carne Asada Fajitas.html';" class="filterDiv Beef">Carne Asada Fajitas</div> 
+  <div onclick="location.href='../HTML/Cowboy Skillet Pie.html';" class="filterDiv Beef">Cowboy Skillet Pie</div> 
+  <div onclick="location.href='../HTML/French Onion Chicken.html';" class="filterDiv Chicken">French Onion Chicken</div> 
+  <div onclick="location.href='../HTML/Garlic Rosemary Chicken.html';" class="filterDiv Chicken">Garlic Rosemary Chicken</div> 
+  <div onclick="location.href='../HTML/Gooey Stuffed Pork Burgers.html';" class="filterDiv Pork">Gooey Stuffed Pork Burgers</div> 
+  <div onclick="location.href='../HTML/Hoisin-Glazed Steak.html';" class="filterDiv Beef">Hoisin-Glazed Steak</div> 
+  <div onclick="location.href='../HTML/Kung Pao Beef Bowls.html';" class="filterDiv Beef">Kung Pao Beef Bowls</div> 
+  <div onclick="location.href='../HTML/Ponzu Chili Steak Bowls.html';" class="filterDiv Beef">Ponzu Chili Steak Bowls</div> 
+  <div onclick="location.href='../HTML/Smoky Paprika Pork Chops.html';" class="filterDiv Pork">Smoky Paprika Pork Chops</div> 
+  <div onclick="location.href='../HTML/Spanish Chicken and Rice.html';" class="filterDiv Chicken">Spanish Chicken and Rice</div> 
+  <div onclick="location.href='../HTML/Sweet N Tangy Cherry Meatballs.html';" class="filterDiv Beef">Sweet 'N' Tangy Cherry Meatballs</div> 
+  <div onclick="location.href='../HTML/Sweet Potato & Black Bean Stew.html';" class="filterDiv Vegetarian">Sweet Potato & Black Bean Stew</div> 
+  <div onclick="location.href='../HTML/Yellow Rice and Chciken Bowls.html';" class="filterDiv Chicken">Yellow Rice and Chciken Bowls</div> 
+</div>
+
+<script>
+filterSelection("all")
+function filterSelection(c) {
+  var x, i;
+  x = document.getElementsByClassName("filterDiv");
+  if (c == "all") c = "";
+  for (i = 0; i < x.length; i++) {
+    w3RemoveClass(x[i], "show");
+    if (x[i].className.indexOf(c) > -1) w3AddClass(x[i], "show");
+  }
+}
+
+function w3AddClass(element, name) {
+  var i, arr1, arr2;
+  arr1 = element.className.split(" ");
+  arr2 = name.split(" ");
+  for (i = 0; i < arr2.length; i++) {
+    if (arr1.indexOf(arr2[i]) == -1) {element.className += " " + arr2[i];}
+  }
+}
+
+function w3RemoveClass(element, name) {
+  var i, arr1, arr2;
+  arr1 = element.className.split(" ");
+  arr2 = name.split(" ");
+  for (i = 0; i < arr2.length; i++) {
+    while (arr1.indexOf(arr2[i]) > -1) {
+      arr1.splice(arr1.indexOf(arr2[i]), 1);     
+    }
+  }
+  element.className = arr1.join(" ");
+}
+
+// Add active class to the current button (highlight it)
+var btnContainer = document.getElementById("myBtnContainer");
+var btns = btnContainer.getElementsByClassName("btn");
+for (var i = 0; i < btns.length; i++) {
+  btns[i].addEventListener("click", function(){
+    var current = document.getElementsByClassName("active");
+    current[0].className = current[0].className.replace(" active", "");
+    this.className += " active";
+  });
+}
+</script>
+
+</body>
+</html>
