@@ -1,0 +1,157 @@
+<html>
+<head>
+
+<title>Filom Produtos</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+<style>
+#box
+{
+    position:fixed;
+    right:0;
+    border:1px solid green;
+    height:100%;
+	width:30%;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+td {
+    padding: 0 15px;
+}
+
+tr.tstyle {
+    border-top: 1px solid #000000;
+}
+</style>
+
+</head>
+
+<body>
+
+<div id="box">
+<table id="summary" >
+
+</table>
+</div>
+
+<form 
+  name="calculator"
+  method="POST" 
+  action="https://script.google.com/macros/s/AKfycbyjWr2XB8lKkz300YzBhxgaHYlq3GkjwArls6OOgpflYcOxhafl8mzTOcMgcaVMb-0bXA/exec"
+>
+
+
+  <p id="prod1"><b><u>Produto 1</u></b></p>
+  <!-- Slideshow container -->
+<div class="w3-content" style="max-width:300px; margin-left: 0;">
+
+  <img class="mySlides1" src="C:\Users\c20460\Desktop\Data Documents\Bots\1-removebg-preview.png" style="width:300px;height:300px;" class="center">
+  <img class="mySlides1" src="C:\Users\c20460\Desktop\Data Documents\Bots\1 - Copy.png" style="width:300px;height:300px;display:none" class="center">
+  <img class="mySlides1" src="C:\Users\c20460\Desktop\Data Documents\Bots\1.png" style="width:300px;height:300px;display:none" class="center">
+
+  <div class="w3-row-padding w3-section">
+    <div class="w3-col s4">
+      <img class="demo1 w3-opacity w3-hover-opacity-off" src="C:\Users\c20460\Desktop\Data Documents\Bots\1-removebg-preview.png" style="width:100px;height:100px;cursor:pointer" onclick="currentDiv(1,1)">
+    </div>
+    <div class="w3-col s4">
+      <img class="demo1 w3-opacity w3-hover-opacity-off" src="C:\Users\c20460\Desktop\Data Documents\Bots\1 - Copy.png" style="width:100px;height:100px;cursor:pointer" onclick="currentDiv(2,1)">
+    </div>
+    <div class="w3-col s4">
+      <img class="demo1 w3-opacity w3-hover-opacity-off" src="C:\Users\c20460\Desktop\Data Documents\Bots\1.png" style="width:100px;height:100px;cursor:pointer" onclick="currentDiv(3,1)">
+    </div>
+  </div>
+</div>
+  <p id="preco1">R$100,00</p>
+  <input id="qty1" type="number" oninput=myFunction() value=0 size="5" required> 
+  
+  <br>
+  <br>
+  
+  <p id="prod2"><b><u>Produto 2</u></b></p>
+  <!-- Slideshow container -->
+<div class="w3-content" style="max-width:300px; margin-left: 0;">
+
+  <img class="mySlides2" src="C:\Users\c20460\Desktop\Data Documents\Bots\2-removebg-preview.png" style="width:300px;height:300px;" class="center">
+  <img class="mySlides2" src="C:\Users\c20460\Desktop\Data Documents\Bots\3 - Copy.jpg" style="width:300px;height:300px;display:none" class="center">
+  <img class="mySlides2" src="C:\Users\c20460\Desktop\Data Documents\Bots\2.jpeg" style="width:300px;height:300px;display:none" class="center">
+
+  <div class="w3-row-padding w3-section">
+    <div class="w3-col s4">
+      <img class="demo2 w3-opacity w3-hover-opacity-off" src="C:\Users\c20460\Desktop\Data Documents\Bots\2-removebg-preview.png" style="width:100px;height:100px;cursor:pointer" onclick="currentDiv(1,2)">
+    </div>
+    <div class="w3-col s4">
+      <img class="demo2 w3-opacity w3-hover-opacity-off" src="C:\Users\c20460\Desktop\Data Documents\Bots\3 - Copy.jpg" style="width:100px;height:100px;cursor:pointer" onclick="currentDiv(2,2)">
+    </div>
+    <div class="w3-col s4">
+      <img class="demo2 w3-opacity w3-hover-opacity-off" src="C:\Users\c20460\Desktop\Data Documents\Bots\2.jpeg" style="width:100px;height:100px;cursor:pointer" onclick="currentDiv(3,2)">
+    </div>
+  </div>
+</div>
+  <p id="preco2">R$150,15</p>
+  <input id="qty2" type="number" oninput=myFunction() value=0 size="5" required> 
+  
+  <br>
+  <br>
+  
+  <button type="submit">Próxima</button>
+</form>
+
+<script>
+function currentDiv(n, no) {
+  showDivs(slideIndex = n, slideNo = no);
+}
+
+function showDivs(n, no) {
+  var i;
+  var x = document.getElementsByClassName("mySlides" + no);
+  var dots = document.getElementsByClassName("demo" + no);
+  if (n > x.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = x.length}
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" w3-opacity-off", "");
+  }
+  x[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " w3-opacity-off";
+}
+</script>
+
+<script>
+let form = document.forms.calculator
+
+function myFunction() {
+  var texto = '';
+  texto += '<tr><td><b>Produto</b></td>';
+  texto += '<td><b>Quantidade</b></td>';
+  texto += '<td><b>Preço Unitário</b></td>';
+  texto += '<td><b>Preço Total</b></td></tr>';
+  var total_compra = 0
+  for (i = 1; i <= 2; i++) {
+	if (document.getElementById("qty" + i).value > 0) {
+		prod_nome = document.getElementById("prod" + i).innerHTML;
+		texto += '<tr><td>' + prod_nome.substring(6,prod_nome.length - 8) + '</td>';
+		qty = document.getElementById("qty" + i).value;
+		texto += '<td align="right">' + document.getElementById("qty" + i).value + '</td>';
+		preco = document.getElementById("preco" + i).innerHTML;
+		texto += '<td align="right">' + preco + '</td>';
+		total = (qty * parseFloat(preco.substring(2,preco.length).replace(',','.')));
+		total_compra += total;
+		texto += '<td align="right">R$' + total.toFixed(2).toString().replace('.',',') + '</td></tr>';
+	}
+  }
+  texto += '<tr class="tstyle"><td><b>Total</b></td>';
+  texto += '<td></td>';
+  texto += '<td></td>';
+  texto += '<td align="right"><b>R$' + total_compra.toFixed(2).toString().replace('.',',') + '</b></td></tr>';
+  document.getElementById("summary").innerHTML = texto;
+}
+</script>
+
+</body>
+</html>
