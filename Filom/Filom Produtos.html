@@ -24,6 +24,7 @@
     height:100%;
     width:30%;
     background-color:black;
+    margin-top: 40;
 }
 
 #box_mobile
@@ -34,6 +35,7 @@
     height:100%;
     width:80%;
     background-color:black;
+    margin-top: 40;
 }
 
 #menu
@@ -80,7 +82,7 @@ tr.tstyle {
   <div class="w3-bar-item w3-button">Filom</div>
 </div>
 
-<div id="box" style="margin-top: 40;">
+<div id="box">
 <table id="summary" >
 
 </table>
@@ -245,7 +247,7 @@ tr.tstyle {
   <div class="w3-bar-item w3-button">Filom</div>
 </div>
 
-<div id="box_mobile" style="display:none; margin-top: 40;">
+<div id="box_mobile" style="display:none;">
 <table id="summary" class="mobile_text">
 
 </table>
@@ -402,6 +404,12 @@ tr.tstyle {
 </div>
 
 <script>
+const isMobile = matchMedia('(max-device-width: 40em)').matches;
+const ad = document.getElementById("device");
+const content = ad.querySelector(isMobile ? '.ad__mobile' : '.ad__desktop').content;
+
+ad.appendChild(document.importNode(content, true));
+
 function currentDiv(n, no) {
   showDivs(slideIndex = n, slideNo = no);
 }
@@ -421,10 +429,6 @@ function showDivs(n, no) {
   x[slideIndex-1].style.display = "block";
   dots[slideIndex-1].className += " w3-opacity-off";
 }
-</script>
-
-<script>
-let form = document.forms.calculator
 
 function myFunction() {
   var texto = '';
@@ -453,19 +457,7 @@ function myFunction() {
   texto += '<td align="right" style="color:white"><b>R$' + total_compra.toFixed(2).toString().replace('.',',') + '</b></td></tr>';
   document.getElementById("summary").innerHTML = texto;
 }
-</script>
 
-<script>
-  const isMobile = matchMedia('(max-device-width: 30em)').matches;
-  const ad = document.getElementById("device");
-  const content = ad
-    .querySelector(isMobile ? '.ad__mobile' : '.ad__desktop')
-    .content;
-
-  ad.appendChild(document.importNode(content, true));
-</script>
-
-<script>
 function showDiv() {
   targetDiv = document.getElementById('box_mobile');
   if (targetDiv.style.display !== "none") {
@@ -482,9 +474,7 @@ function showDiv() {
     }
   }
 }
-</script>
 
-<script>
 function change(input){
   document.getElementById(input).value= 0;
   myFunction();
@@ -493,3 +483,5 @@ function change(input){
 
 </body>
 </html>
+
+
