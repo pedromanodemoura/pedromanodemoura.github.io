@@ -4,6 +4,7 @@
 <title>Filom Produtos</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 <style media="all">
 .ad__mobile{display:none}
@@ -43,7 +44,7 @@
 table.mobile_text tr td {
     font-size: 10px;
     color: white;
-    padding: 0 5px;
+	padding: 0 5px;
 }
 
 #box2
@@ -80,9 +81,11 @@ tr.tstyle {
 </div>
 
 <div id="box" style="margin-top: 40;">
-<table id="summary">
+<table id="summary" >
 
 </table>
+
+<br>
 
 <button type="submit" style="float: right; margin-right: 25; margin-top: 25;">Próxima</button>
 
@@ -242,7 +245,7 @@ tr.tstyle {
   <div class="w3-bar-item w3-button">Filom</div>
 </div>
 
-<div id="box_mobile" style="margin-top: 40px; display:none;">
+<div id="box_mobile" style="display:none; margin-top: 40;">
 <table id="summary" class="mobile_text">
 
 </table>
@@ -440,7 +443,8 @@ function myFunction() {
 		texto += '<td align="right" style="color:white">' + preco + '</td>';
 		total = (qty * parseFloat(preco.substring(2,preco.length).replace(',','.')));
 		total_compra += total;
-		texto += '<td align="right" style="color:white">R$' + total.toFixed(2).toString().replace('.',',') + '</td></tr>';
+		texto += '<td align="right" style="color:white">R$' + total.toFixed(2).toString().replace('.',',') + '</td>';
+		texto += '<td align="right"><button id="clickMe" style="background-color:black" onclick=change("qty' + i + '");><i class="fa fa-xing" style="color:white" aria-hidden="true" id="delete' + i + '"></i></button></td></tr>';
 	}
   }
   texto += '<tr class="tstyle"><td style="color:white"><b>Total</b></td>';
@@ -480,5 +484,14 @@ function showDiv() {
 }
 </script>
 
+<script>
+function change(input){
+  document.getElementById(input).value= 0;
+  myFunction();
+}
+</script>
+
 </body>
 </html>
+
+
