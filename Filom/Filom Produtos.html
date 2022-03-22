@@ -5,14 +5,45 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 
+<style media="all">
+.ad__mobile{display:none}
+.ad__desktop{display:block}
+@media (max-width:800px){
+. ad__desktop {display:none}
+. ad__mobile {display:block}
+}
+</style>
+
 <style>
 #box
 {
     position:fixed;
     right:0;
-    border:1px solid green;
+    border:1px solid black;
     height:100%;
     width:30%;
+    background-color:black;
+}
+
+#box_mobile
+{
+    position:fixed;
+    right:0;
+    border:1px solid black;
+    height:100%;
+    width:80%;
+    background-color:black;
+}
+
+#menu
+{
+    position:fixed;
+}
+
+table.mobile_text tr td {
+    font-size: 10px;
+    color: white;
+	padding: 0 5px;
 }
 
 #box2
@@ -33,17 +64,6 @@ tr.tstyle {
     border-top: 1px solid #000000;
 }
 
-oneliner {
-    width: 300px;
-    height: 500px;
-    float: left;
-}
-
-.center {
-display: flex;
-justify-content: center;
-}
-
 </style>
 
 </head>
@@ -54,7 +74,12 @@ justify-content: center;
 
 <template class="ad__desktop">
 
-<div id="box">
+<div id="menu" class="w3-bar w3-border w3-black">
+  <div class="w3-bar-item w3-button w3-right">Cart</div>
+  <div class="w3-bar-item w3-button">Filom</div>
+</div>
+
+<div id="box" style="margin-top: 40;">
 <table id="summary" >
 
 </table>
@@ -212,19 +237,24 @@ justify-content: center;
 
 <template class="ad__mobile">
 
-<div id="box" style="display:none;">
-<table id="summary" >
+<div id="menu" class="w3-bar w3-border w3-black">
+  <div class="w3-bar-item w3-button w3-right" onclick="showDiv()">Cart</div>
+  <div class="w3-bar-item w3-button">Filom</div>
+</div>
+
+<div id="box_mobile" style="display:none; margin-top: 40;">
+<table id="summary" class="mobile_text">
 
 </table>
+
+<br>
 
 <button type="submit" style="float: right; margin-right: 25; margin-top: 25;">Próxima</button>
 
 </div>
 
-<div id="box2">
-<p>Filom</p>
 
-<br>
+<div align = "center">
 
 <form 
   name="calculator"
@@ -232,125 +262,128 @@ justify-content: center;
   action="https://script.google.com/macros/s/AKfycbyjWr2XB8lKkz300YzBhxgaHYlq3GkjwArls6OOgpflYcOxhafl8mzTOcMgcaVMb-0bXA/exec"
 >
 
+<br>
+<br>
+
   <table style="border-spacing: 10px;">
   <tr>
   <div>
-    <p id="prod1"><b><u>Produto 1</u></b></p>
+    <p id="prod1" align="left" style="margin-left:25"><b><u>Produto 1</u></b></p>
     <div class="w3-content" style="max-width:300px; margin-left: 0;">
 
-      <img class="mySlides1" src="https://drive.google.com/uc?export=view&id=1iM8hkZ0IcD55liOx6N5YED8unU6WzMqD" style="width:300px;height:300px;" class="center">
-      <img class="mySlides1" src="https://drive.google.com/uc?export=view&id=1iM8hkZ0IcD55liOx6N5YED8unU6WzMqD" style="width:300px;height:300px;display:none" class="center">
+      <img class="mySlides1" src="https://drive.google.com/uc?export=view&id=1iM8hkZ0IcD55liOx6N5YED8unU6WzMqD" style="width:200px;height:200px;" class="center">
+      <img class="mySlides1" src="https://drive.google.com/uc?export=view&id=1iM8hkZ0IcD55liOx6N5YED8unU6WzMqD" style="width:200px;height:200px;display:none" class="center">
 
       <div class="w3-row-padding w3-section">
         <div class="w3-col s4">
-          <img class="demo1 w3-opacity w3-hover-opacity-off" src="https://drive.google.com/uc?export=view&id=1iM8hkZ0IcD55liOx6N5YED8unU6WzMqD" style="width:100px;height:100px;cursor:pointer" onclick="currentDiv(1,1)">
+          <img class="demo1 w3-opacity w3-hover-opacity-off" src="https://drive.google.com/uc?export=view&id=1iM8hkZ0IcD55liOx6N5YED8unU6WzMqD" style="width:60px;height:60px;cursor:pointer" onclick="currentDiv(1,1)">
         </div>
         <div class="w3-col s4">
-          <img class="demo1 w3-opacity w3-hover-opacity-off" src="https://drive.google.com/uc?export=view&id=1iM8hkZ0IcD55liOx6N5YED8unU6WzMqD" style="width:100px;height:100px;cursor:pointer" onclick="currentDiv(2,1)">
+          <img class="demo1 w3-opacity w3-hover-opacity-off" src="https://drive.google.com/uc?export=view&id=1iM8hkZ0IcD55liOx6N5YED8unU6WzMqD" style="width:60px;height:60px;cursor:pointer" onclick="currentDiv(2,1)">
         </div>
       </div>
     </div>
-    <p id="preco1">R$100,00</p>
+    <p id="preco1" align="left" style="margin-left:25">R$100,00</p>
     <input id="qty1" type="number" oninput=myFunction() value=0 size="5" required> 
   </div>
   </tr>
   
   <tr>
   <div>
-    <p id="prod2"><b><u>Produto 2</u></b></p>
+    <p id="prod2" align="left" style="margin-left:25"><b><u>Produto 2</u></b></p>
     <!-- Slideshow container -->
-    <div class="w3-content" style="max-width:300px; margin-left: 0;">
+    <div class="w3-content" style="max-width:200px; margin-left: 0;">
 
-      <img class="mySlides2" src="https://drive.google.com/uc?export=view&id=1tVvBFBjvIP3dBihiGhrKUGrAOA-gyNy-" style="width:300px;height:300px;" class="center">
-      <img class="mySlides2" src="https://drive.google.com/uc?export=view&id=1tVvBFBjvIP3dBihiGhrKUGrAOA-gyNy-" style="width:300px;height:300px;display:none" class="center">
-      <img class="mySlides2" src="https://drive.google.com/uc?export=view&id=1tVvBFBjvIP3dBihiGhrKUGrAOA-gyNy-" style="width:300px;height:300px;display:none" class="center">
+      <img class="mySlides2" src="https://drive.google.com/uc?export=view&id=1tVvBFBjvIP3dBihiGhrKUGrAOA-gyNy-" style="width:200px;height:200px;" class="center">
+      <img class="mySlides2" src="https://drive.google.com/uc?export=view&id=1tVvBFBjvIP3dBihiGhrKUGrAOA-gyNy-" style="width:200px;height:200px;display:none" class="center">
+      <img class="mySlides2" src="https://drive.google.com/uc?export=view&id=1tVvBFBjvIP3dBihiGhrKUGrAOA-gyNy-" style="width:200px;height:200px;display:none" class="center">
 
       <div class="w3-row-padding w3-section">
         <div class="w3-col s4">
-          <img class="demo2 w3-opacity w3-hover-opacity-off" src="https://drive.google.com/uc?export=view&id=1tVvBFBjvIP3dBihiGhrKUGrAOA-gyNy-" style="width:100px;height:100px;cursor:pointer" onclick="currentDiv(1,2)">
+          <img class="demo2 w3-opacity w3-hover-opacity-off" src="https://drive.google.com/uc?export=view&id=1tVvBFBjvIP3dBihiGhrKUGrAOA-gyNy-" style="width:60px;height:60px;cursor:pointer" onclick="currentDiv(1,2)">
         </div>
         <div class="w3-col s4">
-          <img class="demo2 w3-opacity w3-hover-opacity-off" src="https://drive.google.com/uc?export=view&id=1tVvBFBjvIP3dBihiGhrKUGrAOA-gyNy-" style="width:100px;height:100px;cursor:pointer" onclick="currentDiv(2,2)">
+          <img class="demo2 w3-opacity w3-hover-opacity-off" src="https://drive.google.com/uc?export=view&id=1tVvBFBjvIP3dBihiGhrKUGrAOA-gyNy-" style="width:60px;height:60px;cursor:pointer" onclick="currentDiv(2,2)">
         </div>
         <div class="w3-col s4">
-          <img class="demo2 w3-opacity w3-hover-opacity-off" src="https://drive.google.com/uc?export=view&id=1tVvBFBjvIP3dBihiGhrKUGrAOA-gyNy-" style="width:100px;height:100px;cursor:pointer" onclick="currentDiv(3,2)">
+          <img class="demo2 w3-opacity w3-hover-opacity-off" src="https://drive.google.com/uc?export=view&id=1tVvBFBjvIP3dBihiGhrKUGrAOA-gyNy-" style="width:60px;height:60px;cursor:pointer" onclick="currentDiv(3,2)">
         </div>
       </div>
     </div>
-    <p id="preco2">R$150,00</p>
+    <p id="preco2" align="left" style="margin-left:25">R$150,00</p>
     <input id="qty2" type="number" oninput=myFunction() value=0 size="5" required> 
   </div>
   </tr>
   
   <tr>
   <div>
-    <p id="prod3"><b><u>Produto 3</u></b></p>
+    <p id="prod3" align="left" style="margin-left:25"><b><u>Produto 3</u></b></p>
     <!-- Slideshow container -->
     <div class="w3-content" style="max-width:300px; margin-left: 0;">
 
-      <img class="mySlides3" src="https://drive.google.com/uc?export=view&id=1lxte2HXOQnjb5FzSr9xYd6iVOHAPZ0hp" style="width:300px;height:300px;" class="center">
-      <img class="mySlides3" src="https://drive.google.com/uc?export=view&id=1lxte2HXOQnjb5FzSr9xYd6iVOHAPZ0hp" style="width:300px;height:300px;display:none" class="center">
+      <img class="mySlides3" src="https://drive.google.com/uc?export=view&id=1lxte2HXOQnjb5FzSr9xYd6iVOHAPZ0hp" style="width:200px;height:200px;" class="center">
+      <img class="mySlides3" src="https://drive.google.com/uc?export=view&id=1lxte2HXOQnjb5FzSr9xYd6iVOHAPZ0hp" style="width:200px;height:200px;display:none" class="center">
 
       <div class="w3-row-padding w3-section">
         <div class="w3-col s4">
-          <img class="demo3 w3-opacity w3-hover-opacity-off" src="https://drive.google.com/uc?export=view&id=1lxte2HXOQnjb5FzSr9xYd6iVOHAPZ0hp" style="width:100px;height:100px;cursor:pointer" onclick="currentDiv(1,3)">
+          <img class="demo3 w3-opacity w3-hover-opacity-off" src="https://drive.google.com/uc?export=view&id=1lxte2HXOQnjb5FzSr9xYd6iVOHAPZ0hp" style="width:60px;height:60px;cursor:pointer" onclick="currentDiv(1,3)">
         </div>
         <div class="w3-col s4">
-          <img class="demo3 w3-opacity w3-hover-opacity-off" src="https://drive.google.com/uc?export=view&id=1lxte2HXOQnjb5FzSr9xYd6iVOHAPZ0hp" style="width:100px;height:100px;cursor:pointer" onclick="currentDiv(2,3)">
+          <img class="demo3 w3-opacity w3-hover-opacity-off" src="https://drive.google.com/uc?export=view&id=1lxte2HXOQnjb5FzSr9xYd6iVOHAPZ0hp" style="width:60px;height:60px;cursor:pointer" onclick="currentDiv(2,3)">
         </div>
       </div>
     </div>
-    <p id="preco3">R$140,00</p>
+    <p id="preco3" align="left" style="margin-left:25">R$140,00</p>
     <input id="qty3" type="number" oninput=myFunction() value=0 size="5" required> 
   </div>
   </tr>
   
   <tr>
   <div>
-    <p id="prod4"><b><u>Produto 4</u></b></p>
+    <p id="prod4" align="left" style="margin-left:25"><b><u>Produto 4</u></b></p>
     <!-- Slideshow container -->
     <div class="w3-content" style="max-width:300px; margin-left: 0;">
 
-      <img class="mySlides4" src="https://drive.google.com/uc?export=view&id=1iM8hkZ0IcD55liOx6N5YED8unU6WzMqD" style="width:300px;height:300px;" class="center">
-      <img class="mySlides4" src="https://drive.google.com/uc?export=view&id=1iM8hkZ0IcD55liOx6N5YED8unU6WzMqD" style="width:300px;height:300px;display:none" class="center">
+      <img class="mySlides4" src="https://drive.google.com/uc?export=view&id=1iM8hkZ0IcD55liOx6N5YED8unU6WzMqD" style="width:200px;height:200px;" class="center">
+      <img class="mySlides4" src="https://drive.google.com/uc?export=view&id=1iM8hkZ0IcD55liOx6N5YED8unU6WzMqD" style="width:200px;height:200px;display:none" class="center">
 
       <div class="w3-row-padding w3-section">
         <div class="w3-col s4">
-          <img class="demo4 w3-opacity w3-hover-opacity-off" src="https://drive.google.com/uc?export=view&id=1iM8hkZ0IcD55liOx6N5YED8unU6WzMqD" style="width:100px;height:100px;cursor:pointer" onclick="currentDiv(1,4)">
+          <img class="demo4 w3-opacity w3-hover-opacity-off" src="https://drive.google.com/uc?export=view&id=1iM8hkZ0IcD55liOx6N5YED8unU6WzMqD" style="width:60px;height:60px;cursor:pointer" onclick="currentDiv(1,4)">
         </div>
         <div class="w3-col s4">
-          <img class="demo4 w3-opacity w3-hover-opacity-off" src="https://drive.google.com/uc?export=view&id=1iM8hkZ0IcD55liOx6N5YED8unU6WzMqD" style="width:100px;height:100px;cursor:pointer" onclick="currentDiv(2,4)">
+          <img class="demo4 w3-opacity w3-hover-opacity-off" src="https://drive.google.com/uc?export=view&id=1iM8hkZ0IcD55liOx6N5YED8unU6WzMqD" style="width:60px;height:60px;cursor:pointer" onclick="currentDiv(2,4)">
         </div>
       </div>
     </div>
-    <p id="preco4">R$100,00</p>
+    <p id="preco4" align="left" style="margin-left:25">R$100,00</p>
     <input id="qty4" type="number" oninput=myFunction() value=0 size="5" required> 
   </div>
   </tr>
   
   <tr>
   <div>
-    <p id="prod5"><b><u>Produto 5</u></b></p>
+    <p id="prod5" align="left" style="margin-left:25"><b><u>Produto 5</u></b></p>
     <!-- Slideshow container -->
     <div class="w3-content" style="max-width:300px; margin-left: 0;">
 
-      <img class="mySlides5" src="https://drive.google.com/uc?export=view&id=1tVvBFBjvIP3dBihiGhrKUGrAOA-gyNy-" style="width:300px;height:300px;" class="center">
-      <img class="mySlides5" src="https://drive.google.com/uc?export=view&id=1tVvBFBjvIP3dBihiGhrKUGrAOA-gyNy-" style="width:300px;height:300px;display:none" class="center">
-      <img class="mySlides5" src="https://drive.google.com/uc?export=view&id=1tVvBFBjvIP3dBihiGhrKUGrAOA-gyNy-" style="width:300px;height:300px;display:none" class="center">
+      <img class="mySlides5" src="https://drive.google.com/uc?export=view&id=1tVvBFBjvIP3dBihiGhrKUGrAOA-gyNy-" style="width:200px;height:200px;" class="center">
+      <img class="mySlides5" src="https://drive.google.com/uc?export=view&id=1tVvBFBjvIP3dBihiGhrKUGrAOA-gyNy-" style="width:200px;height:200px;display:none" class="center">
+      <img class="mySlides5" src="https://drive.google.com/uc?export=view&id=1tVvBFBjvIP3dBihiGhrKUGrAOA-gyNy-" style="width:200px;height:200px;display:none" class="center">
 
       <div class="w3-row-padding w3-section">
         <div class="w3-col s4">
-          <img class="demo5 w3-opacity w3-hover-opacity-off" src="https://drive.google.com/uc?export=view&id=1tVvBFBjvIP3dBihiGhrKUGrAOA-gyNy-" style="width:100px;height:100px;cursor:pointer" onclick="currentDiv(1,5)">
+          <img class="demo5 w3-opacity w3-hover-opacity-off" src="https://drive.google.com/uc?export=view&id=1tVvBFBjvIP3dBihiGhrKUGrAOA-gyNy-" style="width:60px;height:60px;cursor:pointer" onclick="currentDiv(1,5)">
         </div>
         <div class="w3-col s4">
-          <img class="demo5 w3-opacity w3-hover-opacity-off" src="https://drive.google.com/uc?export=view&id=1tVvBFBjvIP3dBihiGhrKUGrAOA-gyNy-" style="width:100px;height:100px;cursor:pointer" onclick="currentDiv(2,5)">
+          <img class="demo5 w3-opacity w3-hover-opacity-off" src="https://drive.google.com/uc?export=view&id=1tVvBFBjvIP3dBihiGhrKUGrAOA-gyNy-" style="width:60px;height:60px;cursor:pointer" onclick="currentDiv(2,5)">
         </div>
         <div class="w3-col s4">
-          <img class="demo5 w3-opacity w3-hover-opacity-off" src="https://drive.google.com/uc?export=view&id=1tVvBFBjvIP3dBihiGhrKUGrAOA-gyNy-" style="width:100px;height:100px;cursor:pointer" onclick="currentDiv(3,5)">
+          <img class="demo5 w3-opacity w3-hover-opacity-off" src="https://drive.google.com/uc?export=view&id=1tVvBFBjvIP3dBihiGhrKUGrAOA-gyNy-" style="width:60px;height:60px;cursor:pointer" onclick="currentDiv(3,5)">
         </div>
       </div>
     </div>
-    <p id="preco5">R$150,00</p>
+    <p id="preco5" align="left" style="margin-left:25">R$150,00</p>
     <input id="qty5" type="number" oninput=myFunction() value=0 size="5" required> 
   </div>
   </tr>
@@ -392,34 +425,34 @@ let form = document.forms.calculator
 
 function myFunction() {
   var texto = '';
-  texto += '<tr><td><b>Produto</b></td>';
-  texto += '<td><b>Quantidade</b></td>';
-  texto += '<td><b>Preço Unitário</b></td>';
-  texto += '<td><b>Preço Total</b></td></tr>';
+  texto += '<tr><td style="color:white"><b>Produto</b></td>';
+  texto += '<td style="color:white"><b>Quantidade</b></td>';
+  texto += '<td style="color:white"><b>Preço Unitário</b></td>';
+  texto += '<td style="color:white"><b>Preço Total</b></td></tr>';
   var total_compra = 0
   for (i = 1; i <= 5; i++) {
 	if (document.getElementById("qty" + i).value > 0) {
 		prod_nome = document.getElementById("prod" + i).innerHTML;
-		texto += '<tr><td>' + prod_nome.substring(6,prod_nome.length - 8) + '</td>';
+		texto += '<tr><td style="color:white">' + prod_nome.substring(6,prod_nome.length - 8) + '</td>';
 		qty = document.getElementById("qty" + i).value;
-		texto += '<td align="right">' + document.getElementById("qty" + i).value + '</td>';
+		texto += '<td align="right" style="color:white">' + document.getElementById("qty" + i).value + '</td>';
 		preco = document.getElementById("preco" + i).innerHTML;
-		texto += '<td align="right">' + preco + '</td>';
+		texto += '<td align="right" style="color:white">' + preco + '</td>';
 		total = (qty * parseFloat(preco.substring(2,preco.length).replace(',','.')));
 		total_compra += total;
-		texto += '<td align="right">R$' + total.toFixed(2).toString().replace('.',',') + '</td></tr>';
+		texto += '<td align="right" style="color:white">R$' + total.toFixed(2).toString().replace('.',',') + '</td></tr>';
 	}
   }
-  texto += '<tr class="tstyle"><td><b>Total</b></td>';
-  texto += '<td></td>';
-  texto += '<td></td>';
-  texto += '<td align="right"><b>R$' + total_compra.toFixed(2).toString().replace('.',',') + '</b></td></tr>';
+  texto += '<tr class="tstyle"><td style="color:white"><b>Total</b></td>';
+  texto += '<td style="color:white"></td>';
+  texto += '<td style="color:white"></td>';
+  texto += '<td align="right" style="color:white"><b>R$' + total_compra.toFixed(2).toString().replace('.',',') + '</b></td></tr>';
   document.getElementById("summary").innerHTML = texto;
 }
 </script>
 
 <script>
-  const isMobile = matchMedia('(max-device-width: 20em)').matches;
+  const isMobile = matchMedia('(max-device-width: 30em)').matches;
   const ad = document.getElementById("device");
   const content = ad
     .querySelector(isMobile ? '.ad__mobile' : '.ad__desktop')
@@ -428,8 +461,26 @@ function myFunction() {
   ad.appendChild(document.importNode(content, true));
 </script>
 
+<script>
+function showDiv() {
+  targetDiv = document.getElementById('box_mobile');
+  if (targetDiv.style.display !== "none") {
+    targetDiv.style.display = "none";
+    var dots = document.getElementsByClassName("w3-opacity-off");
+    for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" w3-opacity-off", "");
+    }
+  } else {
+    targetDiv.style.display = "block";
+    var dots = document.getElementsByClassName("w3-opacity");
+    for (i = 0; i < dots.length; i++) {
+      dots[i].className += " w3-opacity-off";
+    }
+  }
+}
+</script>
+
 </body>
 </html>
-
 
 
