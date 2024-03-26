@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+  box-sizing: border-box;
+}
+
+/* Create three equal columns that floats next to each other */
+.column {
+  float: left;
+  width: 33.33%;
+  max-width: 128px;
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-top: 5px;
+  background-color: #aaa
+}
+
+.column a {
+  text-decoration: none;
+  color: black;
+  text-align: center;
+}
+
+.column img {
+  width: 128px;
+  height: 128px;
+}
+
+@media (max-width: 500px){
+.column {
+  float: left;
+  width: 30%;
+  max-width: 100px;
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-top: 3px;
+}
+
+.column a {
+  font-size: 12px;
+}
+
+.column img {
+  width: 100px;
+  height: 100px;
+  
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+</style>
+</head>
+<body>
+
+<h2>Three Equal Columns</h2>
+
+<div class="row">
+  <div class="column">
+<a href="https://skillshop.exceedlms.com/student/award/JXHs5RyjcvSKwFHjHw4GYaTD" target="_blank" title="Google Analytics - Universal Analytics Certificate">
+			<img src="https://storage.googleapis.com/exceedlms-external-uploads-production/uploads/certifications/badges/530/large/analytics_master_achievement.png" alt="Google Analytics - Universal Analytics Certificate">
+            <p>Google Analytics</p>
+		  </a>
+  </div>
+  <div class="column">
+    <h2>Column 2</h2>
+    <p>Some text..</p>
+  </div>
+  <div class="column">
+    <h2>Column 3</h2>
+    <p>Some text..</p>
+  </div>
+</div>
+
+
+</body>
+</html>
