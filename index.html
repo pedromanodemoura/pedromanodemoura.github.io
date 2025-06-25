@@ -27,8 +27,9 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
     display: flex;
     flex-direction: column;
     gap: 10px;
-    position: absolute;
+    position: fixed;
     width: max-content;
+	top: 16px;
 }
 
 #mySidenav a {
@@ -36,7 +37,7 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
     margin-left: -100px;
     transition: 0.3s;
     padding: 10px;
-    width: 130px;
+    width: 150px;
     text-decoration: none;
     font-size: 20px;
     color: teal;
@@ -46,6 +47,7 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
     border-style: solid;
     border-radius: 0 5px 5px 0;
     text-align: center;
+	box-shadow: 0 4px 10px 0 rgba(0,0,0,0.2),0 4px 20px 0 rgba(0,0,0,0.19);
 }
 
 #mySidenav a:hover {
@@ -64,7 +66,7 @@ window.addEventListener(
 );
 </script>
 
-<body class="w3-light-grey">
+<body class="w3-light-grey" style="position:relative">
 
 <!-- Page Container -->
 <div class="w3-content w3-margin-top" style="max-width:1400px;">
@@ -356,6 +358,14 @@ window.addEventListener(
   <!-- End Page Container -->
 </div>
 
+<div id="mySidenav" class="sidenav">
+    <a href="#work-experience">Work Experience</a>
+    <a href="#portfolio">Portfolio</a>
+    <a href="#education">Education</a>
+    <a href="#leadership">Leadership</a>
+    <a href="#badges-certifications">Badges and Certifications</a>
+</div>
+
 <footer class="w3-container w3-teal w3-center w3-margin-top">
   <p>Find me on social media.</p>
 			<a href="mailto:pedrohmanodemoura@gmail.com" target="_blank"><i class="fa fa-envelope w3-hover-opacity" style="color:white;"></i></a>
@@ -368,18 +378,6 @@ window.addEventListener(
 -->
 </footer>
 
-<div id="mySidenav" class="sidenav">
-    <a href="#work-experience">Work Experience</a>
-    <a href="#portfolio">Portfolio</a>
-    <a href="#education">Education</a>
-    <a href="#leadership">Leadership</a>
-    <a href="#badges-certifications">Badges and Certifications</a>
-</div>
-
-<div style="margin-left:80px;">
-	<h2>Hoverable Sidenav Buttons</h2>
-	<p>Hover over the buttons in the left side navigation to open them.</p>
-</div>
 
 </body>
 </html>
