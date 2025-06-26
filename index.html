@@ -54,10 +54,36 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
   	margin-left: -10px;
 }
 
-@media (max-width: 1470px) {
-#mySidenav {
-    display: none;
+#summary * {
+	margin: 0;
 }
+
+#summary article {
+	margin: 5px;
+	width: 100%;
+}
+
+#summary a {
+    display: flex;
+    align-items: center;
+	text-decoration: none;
+}
+
+.icons {
+	font-size: 2vw !important;
+	margin-right: 1vw !important;
+	width: 2vw !important;
+	height: 2vw !important;
+}
+
+#badges-certifications a {
+	text-decoration: none;
+}
+
+@media (max-width: 1470px) {
+	#mySidenav {
+		display: none;
+	}
 }
 
 </style>
@@ -85,71 +111,114 @@ window.addEventListener(
     
       <div class="w3-white w3-text-grey w3-card-4">
         <div class="w3-display-container w3-center">
-          <img src="img/program/profile_new.png" style="width:70%" alt="Profile">
+			<img src="img/program/profile_new.png" style="width:70%" alt="Profile">
             <h2>Pedro Mano</h2>
         </div>
         <div class="w3-container">
-          <p><i class="fa fa-briefcase fa-fw w3-margin-right w3-large w3-text-teal"></i>Data Analyst</p>
-          <p><i class="fa fa-home fa-fw w3-margin-right w3-large w3-text-teal"></i>New York, NY</p>
-          <p><a href="mailto:pedrohmanodemoura@gmail.com" target="_blank"><i class="fa fa-envelope fa-fw w3-margin-right w3-large w3-text-teal"></i>pedrohmanodemoura@gmail.com</p>
-	  <p><a href="https://github.com/pedromanodemoura" target="_blank"><i class="fab fa-github w3-hover-opacity w3-xlarge" style="color:teal;"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Github page</p>
-	  <p><a href="https://www.linkedin.com/in/pedro-mano/" target="_blank"><i class="fab fa-linkedin-in w3-hover-opacity w3-xlarge" style="color:teal;"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Linkedin</p>
-	  <p><a href="https://public.tableau.com/profile/pedro.henrique.mano.de.moura" target="_blank"><img src="img/program/tableau-icon.svg" width="21" height="30" class="w3-hover-opacity w3-xlarge ex1" style="color:teal;"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Tableau Public</p>
-	  <p><a href="contact/D1v3.vcf" target="_blank"><i class="fa fa-id-card w3-hover-opacity w3-xlarge" aria-hidden="true" style="color:teal;"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Add to Contacts</p>
-			<!--			<i class="fa fa-twitter w3-hover-opacity"></i>
-						<a href="https://www.facebook.com/pedrohmano/" target="_blank"><i class="fa fa-facebook-official w3-hover-opacity"></i></a>
-						<i class="fa fa-instagram w3-hover-opacity"></i>
-			-->
-			</footer>
-          <hr>
+			<div id="summary">
+				<article>
+					<i class="fa fa-briefcase fa-fw w3-text-teal icons"></i>
+					<p>Data Analyst</p>
+				</article>
+				<article>
+					<i class="fa fa-home fa-fw w3-text-teal icons"></i>
+					<p>New York, NY</p>
+				</article>
+				<article>
+					<a href="mailto:pedrohmanodemoura@gmail.com" target="_blank">
+						<i class="fa fa-envelope fa-fw w3-text-teal icons"></i>
+						<p>Email address</p>
+					</a>
+				</article>
+				<article>
+					<a href="https://github.com/pedromanodemoura" target="_blank">
+						<i class="fab fa-github fa-fw w3-text-teal icons"></i>
+						<p>Github</p>
+					</a>
+				</article>
+				<article>
+					<a href="https://www.linkedin.com/in/pedro-mano/" target="_blank">
+						<i class="fab fa-linkedin-in fa-fw w3-text-teal icons"></i>
+						<p>Linkedin</p>
+					</a>
+				</article>
+				<article>
+					<a href="https://public.tableau.com/profile/pedro.henrique.mano.de.moura" target="_blank">
+						<img src="img/program/tableau-icon.svg" width="21" height="30" class="w3-hover-opacity icons" style="color:teal;">
+						<p>Tableau Public</p>
+					</a>
+				</article>
+				<article>
+					<a href="contact/D1v3.vcf" target="_blank">
+						<i class="fa fa-id-card w3-hover-opacity icons" aria-hidden="true" style="color:teal;"></i>
+						<p>Add to Contacts</p>
+					</a>
+				</article>
+			</div>
 
-          <p class="w3-large"><b><i class="fa fa-asterisk fa-fw w3-margin-right w3-text-teal"></i>Skills</b></p>
-          <p>Excel</p>
-          <div class="w3-light-grey w3-round-xlarge w3-small">
-            <div class="w3-container w3-center w3-round-xlarge w3-teal" style="width:95%">95%</div>
-          </div>
-          <p>Tableau</p>
-          <div class="w3-light-grey w3-round-xlarge w3-small">
-            <div class="w3-container w3-center w3-round-xlarge w3-teal" style="width:95%">95%</div>
-          </div>
-          <p>SQL</p>
-          <div class="w3-light-grey w3-round-xlarge w3-small">
-            <div class="w3-container w3-center w3-round-xlarge w3-teal" style="width:95%">95%</div>
-          </div>
-          <p>Python</p>
-          <div class="w3-light-grey w3-round-xlarge w3-small">
-            <div class="w3-container w3-center w3-round-xlarge w3-teal" style="width:85%">85%</div>
-          </div>
-          <p>HTML</p>
-          <div class="w3-light-grey w3-round-xlarge w3-small">
-            <div class="w3-container w3-center w3-round-xlarge w3-teal" style="width:85%">85%</div>
-          </div>
-          <p>Javascript</p>
-          <div class="w3-light-grey w3-round-xlarge w3-small">
-            <div class="w3-container w3-center w3-round-xlarge w3-teal" style="width:75%">75%</div>
-          </div>
-          <p>R</p>
-          <div class="w3-light-grey w3-round-xlarge w3-small">
-            <div class="w3-container w3-center w3-round-xlarge w3-teal" style="width:70%">70%</div>
-          </div>
-          <br>
+			<hr>
 
-          <p class="w3-large w3-text-theme"><b><i class="fa fa-globe fa-fw w3-margin-right w3-text-teal"></i>Languages</b></p>
-          <p>Portuguese</p>
-          <div class="w3-light-grey w3-round-xlarge">
-            <div class="w3-container w3-center w3-round-xlarge w3-teal" style="height:24px;width:100%">Native</div>
-          </div>
-          <p>English</p>
-          <div class="w3-light-grey w3-round-xlarge">
-            <div class="w3-container w3-center w3-round-xlarge w3-teal" style="height:24px;width:95%">Fluent</div>
-          </div>
-          <p>Spanish</p>
-          <div class="w3-light-grey w3-round-xlarge">
-            <div class="w3-container w3-center w3-round-xlarge w3-teal" style="height:24px;width:70%">Conversational</div>
-          </div>
-          <br>
+			<h4><i class="fa fa-asterisk fa-fw w3-margin-right w3-text-teal"></i>Skills</h4>
+			
+			<div>Excel</div>
+			<div class="w3-light-grey w3-round-xlarge w3-small">
+				<div class="w3-container w3-center w3-round-xlarge w3-teal" style="width:95%">95%</div>
+			</div>
+			
+			<div>Tableau</div>
+			<div class="w3-light-grey w3-round-xlarge w3-small">
+				<div class="w3-container w3-center w3-round-xlarge w3-teal" style="width:95%">95%</div>
+			</div>
+			
+			<div>SQL</div>
+			<div class="w3-light-grey w3-round-xlarge w3-small">
+				<div class="w3-container w3-center w3-round-xlarge w3-teal" style="width:95%">95%</div>
+			</div>
+          
+			<div>Python</div>
+			<div class="w3-light-grey w3-round-xlarge w3-small">
+				<div class="w3-container w3-center w3-round-xlarge w3-teal" style="width:85%">85%</div>
+			</div>
+          
+			<div>HTML</div>
+			<div class="w3-light-grey w3-round-xlarge w3-small">
+				<div class="w3-container w3-center w3-round-xlarge w3-teal" style="width:85%">85%</div>
+			</div>
+          
+			<div>Javascript</div>
+			<div class="w3-light-grey w3-round-xlarge w3-small">
+				<div class="w3-container w3-center w3-round-xlarge w3-teal" style="width:75%">75%</div>
+			</div>
+          
+			<div>R</div>
+			<div class="w3-light-grey w3-round-xlarge w3-small">
+				<div class="w3-container w3-center w3-round-xlarge w3-teal" style="width:70%">70%</div>
+			</div>
+			
+			<br>
+
+			<h4><i class="fa fa-globe fa-fw w3-margin-right w3-text-teal"></i>Languages</h4>
+			
+			<div>Portuguese</div>
+			<div class="w3-light-grey w3-round-xlarge">
+				<div class="w3-container w3-center w3-round-xlarge w3-teal" style="height:24px;width:100%">Native</div>
+			</div>
+			
+			<div>English</div>
+			<div class="w3-light-grey w3-round-xlarge">
+				<div class="w3-container w3-center w3-round-xlarge w3-teal" style="height:24px;width:95%">Fluent</div>
+			</div>
+          
+			<div>Spanish</div>
+			<div class="w3-light-grey w3-round-xlarge">
+				<div class="w3-container w3-center w3-round-xlarge w3-teal" style="height:24px;width:70%">Conversational</div>
+			</div>
+			
+			<br>
         </div>
-      </div><br>
+      </div>
+	  
+	  <br>
 
     <!-- End Left Column -->
     </div>
@@ -288,19 +357,17 @@ window.addEventListener(
 
 			<div class="w3-container">
 				<h4 style="color:#585858;"><b>Certifications</b></h4>
-				<p>
+				<div>
 					<a href='https://www.credly.com/badges/f0aee0a2-3582-4100-8e23-41d09d68c780' target="_blank" title="Tableau Specialist Certificate">
 						<img src="img/Tableau Badges/Specialist Certificate.png" alt="Tableau Desktop Specialist" style="width:128px;height:128px;">
 					</a>
-					<img src="img/Tableau Badges/Transaparent.png" alt="Space" style="width:40px;height:128px;">
 					<a href='https://skillshop.exceedlms.com/student/award/JXHs5RyjcvSKwFHjHw4GYaTD' target="_blank" title="Google Analytics - Universal Analytics Certificate">
 						<img src="https://storage.googleapis.com/exceedlms-external-uploads-production/uploads/certifications/badges/530/large/analytics_master_achievement.png" alt="Google Analytics - Universal Analytics Certificate" style="width:128px;height:128px;">
 					</a>
-					<img src="img/Tableau Badges/Transaparent.png" alt="Space" style="width:40px;height:128px;">
 					<a href='https://skillshop.credential.net/6739e19d-fc86-478f-a695-1c7b549f9b9e' target="_blank" title="Google Analytics 4 Certificate">
 						<img src="https://templates.images.credential.net/16722171176440784346699372916351.png" alt="Google Analytics 4 Certificate" style="width:128px;height:128px;">
 					</a>
-				</p>
+				</div>
 	
 			</div>
 	      
@@ -308,47 +375,41 @@ window.addEventListener(
 	      
 			<div class="w3-container">
 				<h4 style="color:#585858;"><b>Badges</b></h4>
-				<p>  
+				<div>  
 					<a href='https://www.credly.com/badges/67dff6b4-3a6e-4d58-8ada-a7d55e341dbe' target="_blank" title="Tableau Consumer Badge">
 						<img src="img/Tableau Badges/Consumer.png" alt="Tableau Consumer" style="width:128px;height:128px;">
 					</a>
-					<img src="img/Tableau Badges/Transaparent.png" alt="Space" style="width:40px;height:128px;">
 					<a href='https://www.credly.com/badges/62aa6274-3bb3-4b67-ba8b-29f1f864db08' target="_blank" title="Tableau Author Badge">
 						<img src="img/Tableau Badges/Author.png" alt="Tableau Author" style="width:128px;height:128px;">
 					</a>
-					<img src="img/Tableau Badges/Transaparent.png" alt="Space" style="width:40px;height:128px;">
 					<a href='https://www.credly.com/badges/88810a9c-09a5-42d9-af7c-16879f315bab' target="_blank" title="Tableau Designer Badge">
 						<img src="img/Tableau Badges/Designer.png" alt="Tableau Designer" style="width:128px;height:128px;">
 					</a>
-				</p>
+				</div>
 
-				<p>
+				<div>
 					<a href='https://www.credly.com/badges/486b084d-c466-4440-898b-b76758bfef4e' target="_blank" title="Tableau Analyst Badge">
 						<img src="img/Tableau Badges/Analyst.png" alt="Tableau Analyst" style="width:128px;height:128px;">
 					</a>
-					<img src="img/Tableau Badges/Transaparent.png" alt="Space" style="width:40px;height:128px;">
 					<a href='https://www.credly.com/badges/0456f5ef-3f2e-40f9-8ffe-def5d26aa04f' target="_blank" title="Tableau Data Science Badge">
 						<img src="img/Tableau Badges/Data Science.png" alt="Tableau Data Scientist" style="width:128px;height:128px;">
 					</a>
-					<img src="img/Tableau Badges/Transaparent.png" alt="Space" style="width:40px;height:128px;">
 					<a href='https://www.credly.com/badges/78d28843-b252-47a9-a715-249220316f11' target="_blank" title="Tableau Developer Badge">
 						<img src="img/Tableau Badges/Developer.png" alt="Tableau Developer" style="width:128px;height:128px;">
 					</a>
-				</p>
+				</div>
 
-				<p>
+				<div>
 					<a href='https://www.credly.com/badges/bbc9b82b-efc5-4df1-a14a-c7c38fedd317' target="_blank" title="Tableau Executive Sponsor Badge">
 						<img src="img/Tableau Badges/Executive Sponsor.png" alt="Tableau Executive Sponsor" style="width:128px;height:128px;">
 					</a>
-					<img src="img/Tableau Badges/Transaparent.png" alt="Space" style="width:40px;height:128px;">
 					<a href='https://www.credly.com/badges/7113512f-795b-4683-a133-fcab35bc8b66' target="_blank" title="Tableau Community Leader Badge">
 						<img src="img/Tableau Badges/Community Leader.png" alt="Tableau Community Leader" style="width:128px;height:128px;">
 					</a>
-					<img src="img/Tableau Badges/Transaparent.png" alt="Space" style="width:40px;height:128px;">
 					<a href='https://www.credly.com/badges/dcf6b401-04e3-4b99-a888-10b297f7ccbc' target="_blank" title="Tableau Data Steward Badge">
 						<img src="img/Tableau Badges/Data Steward.png" alt="Tableau Data Steward" style="width:128px;height:128px;">
 					</a>
-				</p>
+				</div>
 			</div>
 		
 			<br>
