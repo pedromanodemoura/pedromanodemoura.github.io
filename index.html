@@ -198,13 +198,15 @@ window.addEventListener(
   true,
 );
 
-document.querySelector("#mySidenav-btn").addEventListener("click", function (e) {
+function showHideSideMenu() {
     if (document.querySelector("#mySidenav").style.display == 'flex') {
         document.querySelector("#mySidenav").style.display = "none"
     } else if (document.querySelector("#mySidenav").style.display == 'none') {
         document.querySelector("#mySidenav").style.display = "flex"
     }
-})
+}
+
+document.querySelector("#mySidenav-btn").addEventListener("click",showHideSideMenu)
 </script>
 
 <body class="w3-light-grey" style="position:relative">
