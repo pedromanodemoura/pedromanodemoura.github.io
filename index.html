@@ -137,6 +137,11 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
 }
 
 footer {
+    display: flex;
+	align-items: center;
+}
+
+#social-footer {
     gap: 10px;
     display: flex;
     position: absolute;
@@ -185,6 +190,12 @@ footer {
 		width: 15px !important;
 		height: 15px !important;
 	
+}
+
+@media (max-width: 450px) {
+	#data-playground-link {
+		display: none;
+	}
 }
 
 </style>
@@ -423,7 +434,7 @@ document.querySelector("#mySidenav-btn").addEventListener("click",showHideSideMe
 			</h2>
 			
 			<a class="w3-padding-16 top-right" href="https://data-playground.github.io/portfolio" target="_blank">
-				<div style="text-decoration: underline">View on Data Playground</div>
+				<div id="data-playground-link" style="text-decoration: underline">View on Data Playground</div>
 				<i class="fas fa-external-link-alt fa-fw w3-large w3-text-teal"></i>
 			</a>
 
@@ -549,7 +560,7 @@ document.querySelector("#mySidenav-btn").addEventListener("click",showHideSideMe
 
 <div id="mySidenav-btn" class="sidenav-btn">
     <h4>Pedro Mano</h4>
-    <i class="fas fa-bars fa-lg"></i>
+    <i class="fas fa-bars fa-lg" onclick="showHideSideMenu()"></i>
 </div>
 <div id="mySidenav" class="sidenav" style="display:none">
     <a href="#work-experience">Work Experience</a>
@@ -568,15 +579,17 @@ document.querySelector("#mySidenav-btn").addEventListener("click",showHideSideMe
 </div>
 
 <footer class="w3-container w3-teal w3-center w3-margin-top">
-  <p>Find me on social media.</p>
-			<a href="mailto:pedrohmanodemoura@gmail.com" target="_blank"><i class="fa fa-envelope w3-hover-opacity" style="color:white;"></i></a>
-			<a href="https://github.com/pedromanodemoura" target="_blank"><i class="fab fa-github w3-hover-opacity" style="color:white;"></i></a>
-			<a href="https://www.linkedin.com/in/pedro-mano/" target="_blank"><i class="fab fa-linkedin-in w3-hover-opacity" style="color:white;"></i></a>
-			<a href="https://public.tableau.com/profile/pedro.henrique.mano.de.moura" target="_blank"><img src="img/program/tableau-icon.svg" width="16" height="16" class="w3-hover-opacity" style="filter: brightness(0) invert(1);"></a>
-<!--			<i class="fa fa-twitter w3-hover-opacity"></i>
-			<a href="https://www.facebook.com/pedrohmano/" target="_blank"><i class="fa fa-facebook-official w3-hover-opacity"></i></a>
-			<i class="fa fa-instagram w3-hover-opacity"></i>
--->
+	<p>Find me on social media.</p>
+	<div id="social-footer">
+		<a href="mailto:pedrohmanodemoura@gmail.com" target="_blank"><i class="fa fa-envelope w3-hover-opacity" style="color:white;"></i></a>
+		<a href="https://github.com/pedromanodemoura" target="_blank"><i class="fab fa-github w3-hover-opacity" style="color:white;"></i></a>
+		<a href="https://www.linkedin.com/in/pedro-mano/" target="_blank"><i class="fab fa-linkedin-in w3-hover-opacity" style="color:white;"></i></a>
+		<a href="https://public.tableau.com/profile/pedro.henrique.mano.de.moura" target="_blank"><img src="img/program/tableau-icon.svg" width="16" height="16" class="w3-hover-opacity" style="filter: brightness(0) invert(1);"></a>
+	<!--			<i class="fa fa-twitter w3-hover-opacity"></i>
+		<a href="https://www.facebook.com/pedrohmano/" target="_blank"><i class="fa fa-facebook-official w3-hover-opacity"></i></a>
+		<i class="fa fa-instagram w3-hover-opacity"></i>
+	-->
+	</div>
 </footer>
 
 
