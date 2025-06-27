@@ -158,14 +158,21 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
 footer {
     display: flex;
 	align-items: center;
+    padding: 15px 16px !important;
+	
+	p {
+		margin: 0;
+	}
+	
+	#social-footer {
+		gap: 10px;
+		display: flex;
+		position: absolute;
+		right: 16px;
+		bottom: 15px;
+	}
 }
 
-#social-footer {
-    gap: 10px;
-    display: flex;
-    position: absolute;
-    right: 16px;
-}
 
 @media (max-width: 800px) {
 	#myTopnav {
@@ -208,12 +215,23 @@ footer {
 		margin-right: 1vw !important;
 		width: 15px !important;
 		height: 15px !important;
-	
+	}
 }
 
 @media (max-width: 450px) {
 	#data-playground-link {
 		display: none;
+	}
+	
+	footer {
+		flex-direction: column;
+		justify-content: center;
+		
+		#social-footer {
+			position: relative;
+			right: initial;
+			bottom: initial;
+		}
 	}
 }
 
