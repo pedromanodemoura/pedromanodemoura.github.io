@@ -42,28 +42,27 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
     top: 0;
     /*background: #0080806b;*/
     padding: 50px 50px 50px 0px;
-}
 
+	a {
+		transition: 0.3s;
+		padding: 10px;
+		width: 250px;
+		text-decoration: none;
+		font-size: 18px;
+		color: teal;
+		background-color: white;
+		border-color: teal;
+		border-width: 3px 3px 3px 0px;
+		border-style: solid;
+		border-radius: 0 5px 5px 0;
+		text-align: center;
+		box-shadow: 0 4px 10px 0 #008080c2, 0 4px 20px 0 #008080c2;
+		line-height: 36px;
+	}
 
-#mySidenav a {
-    transition: 0.3s;
-    padding: 10px;
-    width: 250px;
-    text-decoration: none;
-    font-size: 18px;
-    color: teal;
-    background-color: white;
-    border-color: teal;
-    border-width: 3px 3px 3px 0px;
-    border-style: solid;
-    border-radius: 0 5px 5px 0;
-    text-align: center;
-    box-shadow: 0 4px 10px 0 #008080c2, 0 4px 20px 0 #008080c2;
-    line-height: 36px;
-}
-
-#mySidenav a:hover {
-  	margin-left: -10px;
+	a:hover {
+		margin-left: -10px;
+	}
 }
 
 #myTopnav {
@@ -75,35 +74,46 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
     top: 0;
     justify-content: space-evenly;
     background: teal;
+
+	a {
+		transition: 0.3s;
+		padding: 5px 10px;
+		text-decoration: none;
+		font-size: 18px;
+		color: white;
+		text-align: center;
+		margin: 5px;
+	}
+
+	a:hover {
+		background: white;
+		color: teal;
+		border-radius: 5px;
+	
 }
 
-#myTopnav a {
-    transition: 0.3s;
-    padding: 5px 10px;
-    text-decoration: none;
-    font-size: 18px;
-    color: white;
-    text-align: center;
-    margin: 5px;
-}
-
-#myTopnav a:hover {
-    background: white;
-    color: teal;
-    border-radius: 5px;
-}
-
-#mySidenav-btn h4 {
-    margin: 5px 16px;
-    color: white;
+#mySidenav-btn {
+	display: none;
+	flex-direction: row;
+	gap: 10px;
+	position: fixed;
 	width: 100%;
-}
+	top: 0;
+	justify-content: space-evenly;
+	background: teal;
 
-#mySidenav-btn i {
-    margin: 7px 16px;
-    width: 30px;
-    color: white;
-	font-size: 30px;
+	h4 {
+		margin: 5px 16px;
+		color: white;
+		width: 100%;
+	}
+
+	i {
+		margin: 7px 16px;
+		width: 30px;
+		color: white;
+		font-size: 30px;
+	}
 }
 
 #summary * {
@@ -201,13 +211,6 @@ footer {
 	
 	#mySidenav-btn {
 		display: flex;
-		flex-direction: row;
-		gap: 10px;
-		position: fixed;
-		width: 100%;
-		top: 0;
-		justify-content: space-evenly;
-		background: teal;
 	}
 	
 	.icons {
