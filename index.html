@@ -20,7 +20,10 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
 .top-right {
     position: absolute;
     top: 0;
-    right: 0;
+    right: 10px;
+    display: flex;
+    gap: 5px;
+	text-decoration: none;
 }
 
 .margin-top-60 {
@@ -32,23 +35,22 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
 }
 
 #mySidenav {
-    display: none;
     flex-direction: column;
-    gap: 10px;
+    gap: 18px;
     position: fixed;
     width: max-content;
-	top: 16px;
+    top: 0;
+    /*background: #0080806b;*/
+    padding: 50px 50px 50px 0px;
 }
 
 
 #mySidenav a {
-    /*position: absolute;*/
-    margin-left: -100px;
     transition: 0.3s;
     padding: 10px;
-    width: 150px;
+    width: 250px;
     text-decoration: none;
-    font-size: 20px;
+    font-size: 18px;
     color: teal;
     background-color: white;
     border-color: teal;
@@ -56,7 +58,8 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
     border-style: solid;
     border-radius: 0 5px 5px 0;
     text-align: center;
-	box-shadow: 0 4px 10px 0 rgba(0,0,0,0.2),0 4px 20px 0 rgba(0,0,0,0.19);
+    box-shadow: 0 4px 10px 0 #008080c2, 0 4px 20px 0 #008080c2;
+    line-height: 36px;
 }
 
 #mySidenav a:hover {
@@ -88,6 +91,17 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
     background: white;
     color: teal;
     border-radius: 5px;
+}
+
+#mySidenav-Btn h4 {
+    margin: 5px 15px;
+    color: white;
+}
+
+#mySidenav-Btn i {
+    margin: 7px;
+    width: 30px;
+    color: white;
 }
 
 #summary * {
@@ -152,8 +166,15 @@ footer {
 		display: none;
 	}
 	
-	#mySidenav {
+	#mySidenav-btn {
 		display: flex;
+		flex-direction: row;
+		gap: 10px;
+		position: fixed;
+		width: 100%;
+		top: 0;
+		justify-content: space-evenly;
+		background: teal;
 	}
 }
 
@@ -167,6 +188,14 @@ window.addEventListener(
   },
   true,
 );
+
+document.querySelector("#mySidenav-btn").addEventListener("click", {
+    if (document.querySelector("#mySidenav").style.display == 'flex') {
+        document.querySelector("#mySidenav").style.display = "none"
+    } else if (document.querySelector("#mySidenav").style.display == 'none') {
+        document.querySelector("#mySidenav").style.display = "flex"
+    }
+})
 </script>
 
 <body class="w3-light-grey" style="position:relative">
@@ -377,8 +406,15 @@ window.addEventListener(
 		</div>
 	  
 		<div class="w3-container w3-card w3-white w3-margin-bottom scroll-margin" style="position:relative" id="portfolio">
-			<h2 class="w3-text-grey w3-padding-16"><i class="fas fa-book fa-fw w3-margin-right w3-xxlarge w3-text-teal"></i>Portfolio</h2>
-			<a class="w3-padding-16 top-right" href="https://data-playground.github.io/portfolio" target="_blank">View on Data Playground <i class="fas fa-external-link-alt fa-fw w3-margin-right w3-large w3-text-teal"></i></a>
+			<h2 class="w3-text-grey w3-padding-16">
+				<i class="fas fa-book fa-fw w3-margin-right w3-xxlarge w3-text-teal"></i>
+				Portfolio
+			</h2>
+			
+			<a class="w3-padding-16 top-right" href="https://data-playground.github.io/portfolio" target="_blank">
+				<div style="text-decoration: underline">View on Data Playground</div>
+				<i class="fas fa-external-link-alt fa-fw w3-large w3-text-teal"></i>
+			</a>
 
 			<iframe src="https://data-playground.github.io/portfolio-embed" style="width: 100%; border: none;"></iframe>
 		</div>
@@ -500,7 +536,11 @@ window.addEventListener(
   <!-- End Page Container -->
 </div>
 
-<div id="mySidenav" class="sidenav">
+<div id="mySidenav-btn" class="sidenav-btn">
+    <h4>Pedro Mano</h4>
+    <i class="fas fa-bars fa-lg"></i>
+</div>
+<div id="mySidenav" class="sidenav" style="display:none">
     <a href="#work-experience">Work Experience</a>
     <a href="#portfolio">Portfolio</a>
     <a href="#education">Education</a>
